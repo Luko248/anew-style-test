@@ -1,8 +1,8 @@
 @import "../base/global";
 
 .button{
-    --btn-color: var(--color-white);
-    --btn-bg-color: #{$color-black--trans-dark};
+    --btn-color: #{$color-black};
+    --btn-bg-color: #{$color-primary};
     --btn-padding-x: #{$gap-xxl};
     --btn-padding-y: #{$gap-l};
     --btn-width: 20rem;
@@ -16,10 +16,11 @@
     background-color: var(--btn-bg-color);
     font-family: $font-text;
     font-size: var(--btn-font-size);
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1;
     color: var(--btn-color);
     text-decoration: none;
+    border-radius: .25em;;
     text-transform: uppercase;
     transition: background-color var(--trans-time) var(--trans-fnc);
     cursor: pointer;
@@ -32,6 +33,6 @@
     }
 
     @include hover{
-        --btn-bg-color: var(--color-black);
+        --btn-bg-color: #{$color-primary--lighten};
     }
 }
