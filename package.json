@@ -1,0 +1,39 @@
+{
+  "name": "anew-style-npm-config",
+  "version": "2.0.0",
+  "description": "Updated on 4.12.2023",
+  "private": true,
+  "license": "ISC",
+  "author": "Lukáš Chylík",
+  "type": "module",
+  "devDependencies": {
+    "@fancyapps/ui": "^5.0.28",
+    "@splidejs/splide": "^4.1.4",
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.19.8",
+    "esbuild-sass-plugin": "^2.16.0",
+    "postcss": "^8.4.32",
+    "postcss-preset-env": "^9.3.0",
+    "postcss-scss": "^4.0.9",
+    "stylelint": "^15.11.0",
+    "stylelint-order": "^6.0.3",
+    "typescript": "^5.3.2",
+    "webp-avif-browsers-support-detection": "^1.2.3"
+  },
+  "browserslist": {
+    "production": [
+      "defaults",
+      "not IE 11",
+      "not IE_Mob 11"
+    ],
+    "development": [
+      "defaults"
+    ]
+  },
+  "scripts": {
+    "build": "node ./build.js",
+    "watch": "npm run lint:style && node ./build.js --watch",
+    "lint": "npm run lint:style",
+    "lint:style": "stylelint --fix **/*.scss --custom-syntax postcss-scss"
+  }
+}
