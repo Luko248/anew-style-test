@@ -30,8 +30,8 @@
     &__box {
         display: grid;
         place-items: center;
-        aspect-ratio: 1 / 1.33;
         inline-size:  175px;
+        aspect-ratio: 1 / 1.33;
         margin-inline: auto;
         overflow: hidden;
     }
@@ -39,19 +39,19 @@
     &__circle {
         display: grid;
         place-items: center;
+        align-content: center;
+        inline-size: inherit;
         gap: $gap-l;
         aspect-ratio: 1;
-        border-radius: 50%;
         background-color: $color-white;
+        border-radius: 50%;
         color: $color-black;
-        inline-size: inherit;
         text-align: center;
-        align-content: center;
        
         > img {
             display: block;
-            block-size: 75px;
             inline-size: auto;
+            block-size: 75px;
             &:is([alt="LED"]){
                 block-size: 100px;
             }
@@ -66,9 +66,9 @@
             position: relative;
             scale: 1 -1;
             &:after{
-                content: "";
                 position: absolute;
                 inset: 0;
+                content: "";
                 background-image: linear-gradient(0, $color-trans, $color-black--trans 11%, $color-black--trans-dark 22%, $color-black 33%);
             }
         }
