@@ -1,0 +1,70 @@
+@import "../base/global";
+
+.showcase{
+    display: grid;
+    grid-template-columns: minmax(1rem, 5fr) minmax(1rem, 8fr);
+    inline-size: max(calc(100svi - 4rem), 100px);
+    margin-inline: auto;
+    gap: 2rem;
+    
+    &__img{
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-block-size: 650px;
+      
+      
+      >img{
+        position: absolute;
+        opacity: var(--img_opacity, 0);
+        box-shadow: 0 0 2rem .5rem var(--img_shadow-color, transparent);
+        transition: box-shadow .25s ease-in-out, opacity .25s ease-in-out;
+      
+        &:is(.active){
+          --img_opacity: 1;
+        }
+        
+         &:nth-child(1){
+          filter: grayscale(100%);
+           
+           &:is(.active){
+            --img_opacity: .7;
+          }
+        }
+        
+        &:nth-child(3){
+          --img_shadow-color: orange;
+        }
+      }
+    }
+    
+    &__content{
+      > h2{
+        font-size: 7.5dvb;
+      }
+      
+      > p{
+        text-wrap: pretty;
+        line-height: 1.7;
+        font-size: larger;
+      }
+    }
+    
+    &__buttons{
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 1rem;
+      > button{
+      aspect-ratio: 1;
+      padding: 0;
+      inline-size: 3rem;
+      display: inline-grid;
+      place-items: center;
+      font-size: x-large;
+        
+      &:is(.active){
+        color: red;
+        }
+      }
+    }
+  }
