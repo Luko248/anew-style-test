@@ -2,7 +2,7 @@
 
 .button{
     --btn-color: #{$color-black};
-    --btn-bg-color: #{$color-primary};
+    --btn-bg-color: #{$color-white};
     --btn-padding-x: #{$gap-xxl};
     --btn-padding-y: #{$gap-l};
     --btn-width: 20rem;
@@ -22,8 +22,10 @@
     color: var(--btn-color);
     text-decoration: none;;
     text-transform: uppercase;
-    transition: background-color var(--trans-time) var(--trans-fnc);
+    transition: box-shadow var(--trans-time) var(--trans-fnc), translate var(--trans-time) var(--trans-fnc);
     cursor: pointer;
+    translate: 0 var(--btn_trans-y, 0);
+    box-shadow: 0 0 $gap-m 0 var(--btn_shadow-color, var(--color-trans));
 
     @include res-max-laptop-s{
         --btn-padding-x: #{$gap-l};
@@ -33,6 +35,7 @@
     }
 
     @include hover{
-        --btn-bg-color: #{$color-primary--lighten};
+        --btn_shadow-color: #{$color-white--trans};
+        --btn_trans-y: calc(#{$gap-s} * -1);
     }
 }

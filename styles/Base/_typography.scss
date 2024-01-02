@@ -17,7 +17,7 @@ p, span, small{
 
 .title{
     --title-justify-content: flex-start;
-    --title-font-size: 6em;
+    --title-font-size: 7em;
     --title-color: #{$color-font};
     --title-mg-bottom: #{$gap-xxl}; 
     @include flex-set(flex, row, wrap, 0, center, var(--title-justify-content));
@@ -26,6 +26,8 @@ p, span, small{
     font-size: var(--title-font-size);
     line-height: 1.2;
     color: var(--title-color);
+    text-align: center;
+    display: block;
 
     @include res-max-laptop-l{
         --title-font-size: 4em;

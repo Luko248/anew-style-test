@@ -39,7 +39,6 @@ header {
         inset: auto auto 20dvb 10dvb;
         padding-block-start: 4em;
         padding-block-end: 2em;
-        overflow: hidden;
         z-index: 3;
 
         @include res-max-tablet{
@@ -48,15 +47,13 @@ header {
           padding-inline: $gap-l;
         }
 
-        > h1,
-        > strong {
+        > h1 {
             position: relative;
             display: inline-block;
             opacity: var(--c-item-title_opacity);
             font-family: $font-title;
-            font-size: clamp($gap-xxl, 8em, 20dvb);
-            font-weight: 400;
-            line-height: 1;
+            font-size: clamp($gap-xxl, 12em, 25dvb);
+            font-weight: 700;
             line-height: 1.2;
             color: var(--color-white);
             text-shadow: var(--color-black) 0 0 1.5rem;
@@ -70,14 +67,6 @@ header {
             @include res-max-tablet {
               font-size: clamp($gap-xl, 5em, 10dvb);
           } 
-        }
-
-
-        > .button {
-            opacity: var(--c-item-button_opacity);
-            translate: 0 var(--c-item-button_translate-y);
-            transition: opacity 1s var(--trans-fnc) 0.5s, translate 1s var(--trans-fnc) 0.5s,
-                background-color var(--trans-time) var(--trans-fnc), color var(--trans-time) var(--trans-fnc);
         }
   }
 }

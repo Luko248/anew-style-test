@@ -1,8 +1,7 @@
 @import "../base/global";
 
 .container {
-	inline-size: var(--container-width, 80%);
-	min-inline-size: var(--container-min-width, #{$width-laptop-s});
+	inline-size: var(--container-width, $width-laptop-m);
 	padding-inline: var(--container-pad-x, #{$gap-xxl});
 	margin-inline: auto;
 
