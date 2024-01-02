@@ -144,8 +144,11 @@
 		</div>
 	</nav>
 	<header>
-		<video class="header__video" loop aria-label="Anew style header video" src="./dist/videos/main-video.mp4" muted
-			preload="metadata" autoplay></video>
+		<video class="header__video" loop aria-label="Anew style header video" muted preload="metadata" autoplay>
+			<source src="./dist/videos/main-video.mp4" type="video/mp4">
+			<source src="./dist/videos/main-video.webm" type="video/webm">
+			<source src="./dist/videos/main-video.ogv" type="video/ogg">
+		</video>
 		<div class="header__content">
 			<h1>Anew Style</h1>
 			<a class="button" href="#o-nas" aria-label="Přejít na sekci o nás" rel="noopener">Chci
