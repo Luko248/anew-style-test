@@ -1,0 +1,83 @@
+@import "../base/global";
+.piktogram {
+    @include grid-columns(
+        var(--piktogtam-display, grid),
+        var(--template-columns, minmax($gap-xxl, 5fr) minmax($gap-xxl, 8fr)),
+        var(--gap, #{$gap-xxl}),
+        center
+    );
+
+    &:not(:last-of-type) {
+        margin-block-end: 5dvb;
+    }
+
+    @include res-max-mobile-l {
+        --template-columns: minmax(#{$gap-xxl}, 1fr);
+    }
+
+    &--invert {
+        --template-columns: minmax(#{$gap-xxl}, 8fr) minmax(#{$gap-xxl}, 5fr);
+
+        @include res-max-mobile-l {
+            --template-columns: minmax(#{$gap-xxl}, 1fr);
+        }
+    }
+
+    &--hidden:not(.visible) {
+        --piktogtam-display: none;
+    }
+
+    &__box {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1 / 1.33;
+        inline-size:  175px;
+        margin-inline: auto;
+        overflow: hidden;
+    }
+
+    &__circle {
+        display: grid;
+        place-items: center;
+        gap: $gap-l;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: $color-white;
+        color: $color-black;
+        inline-size: inherit;
+        text-align: center;
+        align-content: center;
+       
+        > img {
+            display: block;
+            block-size: 75px;
+            inline-size: auto;
+            &:is([alt="LED"]){
+                block-size: 100px;
+            }
+        }
+        > small {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        + div {
+            position: relative;
+            scale: 1 -1;
+            &:after{
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(0, $color-trans, $color-black--trans 11%, $color-black--trans-dark 22%, $color-black 33%);
+            }
+        }
+    }
+
+    &__desc > p {
+        margin: 0;
+        font-size: clamp($gap-l, 3dvb, $gap-xl);
+        line-height: 1.7;
+        color: $color-font;
+    }
+}
