@@ -9,27 +9,27 @@ header {
  &:after{
   position: absolute;
   inset: 0;
-  z-index: 2;
   content: "";
   background-image: linear-gradient(
     90deg,
     $color-black,
     $color-trans
   );
+  z-index: 2;
  }
 }
 
 .header {
   &__video {
-    inline-size: 100%;
     position: absolute;
     inset: 50% 0 0 50%;
+    inline-size: 100%;
     translate: -50% -50%;
     z-index: 1;
 
     @include res-max-laptop-s{
-      block-size: 100%;
       inline-size: auto;
+      block-size: 100%;
     }
   }
 

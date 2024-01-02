@@ -14,13 +14,13 @@
     padding-block: var(--btn-padding-y);
     padding-inline: var(--btn-padding-x);
     background-color: var(--btn-bg-color);
+    border-radius: .25em;
     font-family: $font-text;
     font-size: var(--btn-font-size);
     font-weight: 600;
     line-height: 1;
     color: var(--btn-color);
-    text-decoration: none;
-    border-radius: .25em;;
+    text-decoration: none;;
     text-transform: uppercase;
     transition: background-color var(--trans-time) var(--trans-fnc);
     cursor: pointer;
