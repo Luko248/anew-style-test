@@ -26,7 +26,6 @@ p, span, small{
     font-size: var(--title-font-size);
     line-height: 1.2;
     color: var(--title-color);
-    text-align: center;
     display: block;
 
     @include res-max-laptop-l{
