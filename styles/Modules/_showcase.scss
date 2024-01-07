@@ -1,70 +1,75 @@
 @import "../base/global";
 
+
+section:has(> .showcase){
+  background-color: black;
+
+}
 .showcase{
     display: grid;
-    grid-template-columns: minmax(1rem, 5fr) minmax(1rem, 8fr);
+    grid-template-columns: minmax(1rem, 8fr) minmax(1rem, 5fr);
     inline-size: max(calc(100svi - 4rem), 100px);
+    align-items: center;
     margin-inline: auto;
-    gap: 2rem;
+    background-color: inherit;
+    color: $color-white;
+    max-inline-size: $width-laptop-xl;
     
     &__img{
       position: relative;
       display: grid;
       place-items: center;
-      min-block-size: 650px;
-      
+      inline-size: 100%;
+      aspect-ratio: 1440 / 1143;
       
       >img{
+        display: block;
         position: absolute;
         opacity: var(--img_opacity, 0);
-        box-shadow: 0 0 2rem .5rem var(--img_shadow-color, transparent);
         transition: box-shadow .25s ease-in-out, opacity .25s ease-in-out;
+        box-shadow: 0 0 2rem .5rem var(--img_shadow-color, transparent);
+        max-inline-size: 100%;
       
         &:is(.active){
           --img_opacity: 1;
-        }
-        
-         &:nth-child(1){
-          filter: grayscale(100%);
-           
-           &:is(.active){
-            --img_opacity: .7;
-          }
-        }
-        
-        &:nth-child(3){
-          --img_shadow-color: orange;
         }
       }
     }
     
     &__content{
+      padding-inline-end: 3.5svi;
       > h2{
-        font-size: 7.5dvb;
+        font-size: 6svb;
+        text-wrap: pretty;
+        line-height: 1.25;
+        font-weight: 900;
+        margin-block-end: 1.5svb;
+
+        > span{
+          display: block;
+          font-size: 1.35em;
+          letter-spacing: .1em;
+          font-weight: inherit;
+          text-transform: uppercase;
+        }
       }
       
       > p{
-        text-wrap: pretty;
+        font-size: max(1.6rem,min(3dvb,2.4rem));
         line-height: 1.7;
-        font-size: larger;
+        text-wrap: pretty;
+        margin-block-end: 7svb;
       }
     }
     
     &__buttons{
-      display: flex;
+      display: inline-flex;
       flex-flow: row nowrap;
-      gap: 1rem;
-      > button{
-      aspect-ratio: 1;
-      padding: 0;
-      inline-size: 3rem;
-      display: inline-grid;
-      place-items: center;
-      font-size: x-large;
-        
-      &:is(.active){
-        color: red;
-        }
-      }
+      justify-content: flex-start;
+      gap: $gap-l;
+
+       > .button{
+        flex-flow: column wrap;
+       }
     }
   }

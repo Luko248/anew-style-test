@@ -17,15 +17,15 @@
     border-radius: .25em;
     font-family: $font-text;
     font-size: var(--btn-font-size);
-    font-weight: 600;
+    font-weight: var(--btn_font-weight, 600);
     line-height: 1;
     color: var(--btn-color);
     text-decoration: none;;
     text-transform: uppercase;
+    translate: 0 var(--btn_trans-y, 0);
     transition: box-shadow var(--trans-time) var(--trans-fnc), translate var(--trans-time) var(--trans-fnc);
     cursor: pointer;
-    translate: 0 var(--btn_trans-y, 0);
-    box-shadow: 0 0 $gap-m 0 var(--btn_shadow-color, var(--color-trans));
+    box-shadow: 0 0 var(--btn-shadow_size, $gap-m) 0 var(--btn_shadow-color, var(--color-trans));
 
     @include res-max-laptop-s{
         --btn-padding-x: #{$gap-l};
@@ -37,5 +37,16 @@
     @include hover{
         --btn_shadow-color: #{$color-white--trans};
         --btn_trans-y: calc(#{$gap-s} * -1);
+    }
+    &:is(.active){
+        --btn_shadow-color: #{$color-primary--lighten};
+        --btn-shadow_size: #{$gap-xxl};
+        --btn_font-weight: 900;
+        --btn-bg-color: #{$color-primary--lighten};
+    }
+
+    > small{
+        font-weight: inherit;
+        white-space: nowrap;
     }
 }

@@ -21,12 +21,12 @@ p, span, small{
     --title-color: #{$color-font};
     --title-mg-bottom: #{$gap-xxl}; 
     @include flex-set(flex, row, wrap, 0, center, var(--title-justify-content));
+    display: block;
     margin-bottom: var(--title-mg-bottom);
     font-family: $font-title;
     font-size: var(--title-font-size);
     line-height: 1.2;
     color: var(--title-color);
-    display: block;
 
     @include res-max-laptop-l{
         --title-font-size: 4em;

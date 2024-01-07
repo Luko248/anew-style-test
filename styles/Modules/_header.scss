@@ -2,11 +2,11 @@
 
 header {
   position: relative;
+  display: grid;
+  place-items: center;
   block-size: 100dvb;
   background-color: var(--color-black);
   overflow: hidden;
-  display: grid;
-  place-items: center;
 
 //  &:after{
 //   position: absolute;
@@ -50,8 +50,10 @@ header {
             opacity: var(--c-item-title_opacity);
             font-family: $font-title;
             font-size: clamp($gap-xxl, 15em, 25dvb);
-            font-weight: 700;
+            font-weight: 900;
             line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: .1em;
             color: var(--color-white);
             text-shadow: var(--color-black) 0 0 1.5rem;
             translate: 0 var(--c-item-title_translate-y);
