@@ -1,5 +1,9 @@
 @import "../base/global";
 
+section:has(> .gallery){
+  padding-inline: $gap-xxl;
+}
+
 .gallery {
   @include grid-columns(
     grid,
@@ -8,6 +12,8 @@
     var(--align-items, flex-start)
   );
   margin-block-end: $gap-xxl;
+  max-inline-size: $width-laptop-xl;
+  margin-inline: auto;
 
   @include res-max-laptop-s {
     --gap: #{$gap-l};
@@ -32,6 +38,7 @@
   display: block;
   text-decoration: none;
   overflow: hidden;
+  border-radius: 1rem;
   container-type: inline-size;
 
   &:first-child{
@@ -54,11 +61,12 @@
     position: relative;
     inline-size: 100%;
     aspect-ratio: 16 / 9;
-
+    
     img {
       @include position;
       display: block;
-      inline-size: 100%;
+      min-inline-size: 100%;
+      min-block-size: 100%;
       scale: var(--photo_scale);
       transition: scale .5s ease-in-out;
     }
@@ -85,6 +93,7 @@
       letter-spacing: .2em;
       text-align: center;
       font-weight: 900;
+      line-height: 1.25;
       opacity: var(--gitem_text-opacity, 0);
       transition: opacity .5s var(--trans-fnc);
       text-shadow: var(--color-black) 0 0 1.5rem;

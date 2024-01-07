@@ -7,7 +7,7 @@
     @include flex-set(inline-flex, row, nowrap, 1.2rem);
     font-family: $font-text;
     font-size: var(--link-font-size, large);
-    color: var(--link-color, #{$color-white});
+    color: var(--link-color, inherit);
     text-decoration: var(--link-text-decor);
     text-transform: underline;
     transition: color var(--trans-time) var(--trans-fnc);
