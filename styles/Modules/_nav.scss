@@ -86,6 +86,7 @@ nav {
         text-align: center;
         text-decoration: none;
         white-space: nowrap;
+        text-transform: uppercase;
 
         @include res-max-tablet {
             --nav-item-min-font-size: 18px;

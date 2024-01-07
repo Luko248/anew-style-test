@@ -3,7 +3,7 @@
 section{
     --sec-bg: #{$color-bg};
     --sec-pad-y: 10dvb;
-    scroll-margin-top: var(--sec_scroll-mg, 0);
+    // scroll-margin-top: var(--sec_scroll-mg, 0);
     padding: var(--sec-pad-y) 0;
     background-color: var(--sec-bg);
 

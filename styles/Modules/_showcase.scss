@@ -2,8 +2,9 @@
 
 
 section:has(> .showcase){
+  --sec-pad-y: 0;
   background-color: black;
-
+  min-block-size: 100svb;
 }
 .showcase{
     display: grid;
