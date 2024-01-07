@@ -16,7 +16,7 @@
 
   .image-container + span{
     position: absolute;
-    inset: auto auto $gap-l 50%;
+    inset: auto auto $gap-xxl 50%;
     font-family: $font-title;
     font-size: clamp($gap-l, 3vh, 2em);
     font-weight: 300;
@@ -47,6 +47,8 @@
         text-transform: uppercase;
         white-space: nowrap;
         translate: -50%;   
+        font-family: $font-title;
+        font-weight: 900;
      }
   }
   

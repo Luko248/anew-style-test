@@ -19,14 +19,17 @@ p, span, small{
     --title-justify-content: flex-start;
     --title-font-size: 7em;
     --title-color: #{$color-font};
-    --title-mg-bottom: #{$gap-xxl}; 
+    --title-mg-bottom: clamp(#{$gap-xxl}, 8svb, 10rem); 
     @include flex-set(flex, row, wrap, 0, center, var(--title-justify-content));
     display: block;
     margin-bottom: var(--title-mg-bottom);
     font-family: $font-title;
     font-size: var(--title-font-size);
     line-height: 1.2;
+    letter-spacing: .1em;
     color: var(--title-color);
+    text-transform: uppercase;
+    font-weight: 900;
 
     @include res-max-laptop-l{
         --title-font-size: 4em;
