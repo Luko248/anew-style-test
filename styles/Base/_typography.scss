@@ -57,6 +57,10 @@ p, span, small{
         --title-color: #{$color-white};
     }
 
+    &--mg-s{
+        --title-mg-bottom: #{$gap-xxl}; 
+    }
+
     &--s{
         --title-font-size: 3.2em;
 
@@ -83,7 +87,7 @@ p, span, small{
 .desc{
     --border-width: 0;
     --mg-b: 5rem;
-    --desc-font-size: large;
+    --desc-font-size: clamp(#{$gap-l}, 3svb, #{$gap-xl});
     @include border('left', var(--border-width), $color-font);
     padding-left: var(--desc-pad-left);
     margin-bottom: var(--mg-b);
@@ -111,6 +115,10 @@ p, span, small{
 
     &--mg-s{
         --mg-b: #{$gap-xxl};
+    }
+
+    &--center{
+        text-align: center;
     }
 
     strong, a:not(.button), b, span{

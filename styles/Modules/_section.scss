@@ -23,6 +23,17 @@ section{
         padding-top: 0;
     }
 
+    &.light{
+        --sec-bg: #{$color-white};
+        .title, .desc{
+            color: $color-black !important;
+        }
+
+        .desc{
+            font-weight: 400;
+        }
+    }
+
     &.no-p{
         padding: 0;
     }
