@@ -38,7 +38,7 @@ header {
   &__content {
     @include flex-set(flex, column, wrap, var(--c_gap, 3em), center, center);
         z-index: 3;
-        animation: headerTitleAnim .5s ease-in-out forwards, headerBtnAnim .5s ease-in-out .5s forwards;
+        animation: headerTitleAnim .5s ease-in-out forwards, headerDescAnim .5s ease-in-out .25s forwards, headerBtnAnim .5s ease-in-out 1s forwards;
 
         @include res-max-tablet{
           inline-size: 100%;
@@ -52,7 +52,7 @@ header {
             font-family: $font-title;
             font-size: clamp($gap-xxl, 15em, 25dvb);
             font-weight: 900;
-            line-height: 1.2;
+            line-height: 1;
             text-transform: uppercase;
             letter-spacing: .1em;
             color: var(--color-white);
@@ -70,10 +70,24 @@ header {
           } 
         }
 
+      > strong{
+        color: $color-white;
+        font-size: clamp($gap-xl, 4em, 8svb);
+        translate: 0 -2.5svb;
+        font-family: $font-title;
+        letter-spacing: .2em;
+        line-height: 1;
+        opacity: var(--header-desc_opacity, 0);
+        text-shadow: var(--color-black) 0 0 1.5rem;
+        translate: 0 var(--header-desc_translate-y, -1svb);
+        transition: opacity 1s var(--trans-fnc), translate 1s var(--trans-fnc);
+      }
+
         > .button{
           opacity: var(--header-btn_opacity, 0);
-          translate: 0 var(--btn_trans-y, -1rem);
+          translate: 0 var(--btn_trans-y, -1svb);
           transition: opacity .5s var(--trans-fnc), translate .5s var(--trans-fnc), box-shadow var(--trans-time) var(--trans-fnc);
+          margin-block-start: 2.5svb;
         }
   }
 }
@@ -89,10 +103,21 @@ header {
   }
 }
 
+@keyframes headerDescAnim{
+  from{
+    --header-desc_opacity: 0;
+    --header-desc_translate-y: -1svb;
+  }
+  to{
+    --header-desc_opacity: 1;
+    --header-desc_translate-y: -2.5svb;
+  }
+}
+
 @keyframes headerBtnAnim {
   from{
     --header-btn_opacity: 0;
-    --btn_trans-y: -1rem;
+    --btn_trans-y: -1svb;
   }
   to{
     --header-btn_opacity: 1;
